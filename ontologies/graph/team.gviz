@@ -1,0 +1,31 @@
+digraph {
+  charset="utf-8";
+
+  // Edges
+  "Rmy-ont:Liverpool" -> "Rhttp://www.w3.org/2002/07/owl#NamedIndividual" [label="rdf:type"];
+  "Rmy-ont:Liverpool" -> "Rmy-ont:Team" [label="rdf:type"];
+  "Rmy-ont:Liverpool" -> "Rmy-ont:M_JK" [label="managedBy"];
+  "Rmy-ont:Liverpool" -> LLLWLL [label="currentForm"];
+  "Rmy-ont:Liverpool" -> L7 [label="nDarw"];
+  "Rmy-ont:Liverpool" -> L9 [label="nLose"];
+  "Rmy-ont:Liverpool" -> L12 [label="nWin"];
+  "Rmy-ont:Liverpool" -> L8 [label="rank"];
+  "Rmy-ont:Liverpool" -> LLiverpool [label="rdfs:label"];
+  "Rmy-ont:M_JK" -> "Rhttp://www.w3.org/2002/07/owl#NamedIndividual" [label="rdf:type"];
+  "Rmy-ont:M_JK" -> "Rmy-ont:Manager" [label="rdf:type"];
+  "Rmy-ont:M_JK" -> "LJurger Klopp" [label="rdfs:label"];
+
+  // Nodes
+  L12 [label=12,shape=record];
+  L7 [label=7,shape=record];
+  L8 [label=8,shape=record];
+  L9 [label=9,shape=record];
+  "LJurger Klopp" [label="Jurger Klopp",shape=record];
+  LLLWLL [label=LLWLL,shape=record];
+  LLiverpool [label=Liverpool,shape=record];
+  "Rmy-ont:Liverpool" [URL="my-ont:Liverpool",label="my-ont:Liverpool",shape=ellipse,color=blue];
+  "Rmy-ont:M_JK" [URL="my-ont:M_JK",label="my-ont:M_JK",shape=ellipse,color=blue];
+  "Rmy-ont:Manager" [URL="my-ont:Manager",label="my-ont:Manager",shape=ellipse,color=blue];
+  "Rmy-ont:Team" [URL="my-ont:Team",label="my-ont:Team",shape=ellipse,color=blue];
+  "Rhttp://www.w3.org/2002/07/owl#NamedIndividual" [URL="http://www.w3.org/2002/07/owl#NamedIndividual",label="owl:NamedIndividual",shape=ellipse,color=blue];
+}

@@ -1,0 +1,497 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#"
+     xml:base="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:untitled-ontology-5="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#label -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#label">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#awayTeam -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#awayTeam">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#teams"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#playGameOut"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Game"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Team"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#drawAgainst -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#drawAgainst">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#playedAgainst"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Team"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Team"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#hasSeason -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#hasSeason">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#MatchDay"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Season"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#homeTeam -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#homeTeam">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#teams"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#playGameHome"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Game"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Team"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#looseAgainst -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#looseAgainst">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#playedAgainst"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#winAgainst"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Team"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Team"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#looser -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#looser">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Game"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Team"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#manage -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#manage">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#managedBy"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Manager"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Team"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#managedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#managedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Team"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Manager"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#matchDayOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#matchDayOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Game"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#MatchDay"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#playGame -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#playGame">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#teams"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Team"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Game"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#playGameHome -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#playGameHome">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#playGame"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Team"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Game"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#playGameOut -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#playGameOut">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#playGame"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Team"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Game"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#playedAgainst -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#playedAgainst">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Team"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Team"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#referee -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#referee">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#refereedBy"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Referee"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Game"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#refereedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#refereedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Game"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Referee"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#teams -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#teams">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Game"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Team"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#winAgainst -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#winAgainst">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#playedAgainst"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Team"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Team"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#winner -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#winner">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Game"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Team"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#AwayWin -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#AwayWin">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Referee"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#creationDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#creationDate">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Team"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#currentForm -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#currentForm">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Team"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#dateGame -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#dateGame">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Game"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#fullTimeAwayGoal -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#fullTimeAwayGoal">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Game"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#fullTimeHomeGoal -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#fullTimeHomeGoal">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Game"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#homeWin -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#homeWin">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Referee"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#nDraw -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#nDraw">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Team"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#nLose -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#nLose">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Team"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#nWin -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#nWin">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Team"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#rank -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#rank">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Team"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Game -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Game"/>
+    
+
+
+    <!-- http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Manager -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Manager">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#MatchDay -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#MatchDay"/>
+    
+
+
+    <!-- http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Person -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Person"/>
+    
+
+
+    <!-- http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Referee -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Referee">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Season -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Season"/>
+    
+
+
+    <!-- http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Team -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Team"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#LaiVSLiv_130221 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#LaiVSLiv_130221">
+        <rdf:type rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Game"/>
+        <awayTeam rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Liverpool"/>
+        <homeTeam rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Leicester"/>
+        <dateGame rdf:datatype="http://www.w3.org/2001/XMLSchema#string">13/02/21</dateGame>
+        <fullTimeAwayGoal rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1</fullTimeAwayGoal>
+        <fullTimeHomeGoal rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3</fullTimeHomeGoal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Leicester -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Leicester">
+        <rdf:type rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Team"/>
+        <currentForm rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WDLWW</currentForm>
+        <nDraw rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</nDraw>
+        <nLose rdf:datatype="http://www.w3.org/2001/XMLSchema#int">7</nLose>
+        <nWin rdf:datatype="http://www.w3.org/2001/XMLSchema#int">16</nWin>
+        <rank rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</rank>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Leicester</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Liverpool -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Liverpool">
+        <rdf:type rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Team"/>
+        <managedBy rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#M_JK"/>
+        <playedAgainst rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Leicester"/>
+        <currentForm rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LLWLL</currentForm>
+        <nDraw rdf:datatype="http://www.w3.org/2001/XMLSchema#int">7</nDraw>
+        <nLose rdf:datatype="http://www.w3.org/2001/XMLSchema#int">9</nLose>
+        <nWin rdf:datatype="http://www.w3.org/2001/XMLSchema#int">12</nWin>
+        <rank rdf:datatype="http://www.w3.org/2001/XMLSchema#int">8</rank>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Liverpool</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#M_BR -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#M_BR">
+        <rdf:type rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Manager"/>
+        <manage rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Leicester"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Brendan Radges</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#M_JK -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#M_JK">
+        <rdf:type rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Manager"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jurger Klopp</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#R_AT -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#R_AT">
+        <rdf:type rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Referee"/>
+        <AwayWin rdf:datatype="http://www.w3.org/2001/XMLSchema#int">53</AwayWin>
+        <homeWin rdf:datatype="http://www.w3.org/2001/XMLSchema#int">52</homeWin>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A. Tylor</rdfs:label>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
