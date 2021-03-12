@@ -277,7 +277,7 @@
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#dateGame">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Game"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
@@ -426,8 +426,8 @@
         <awayTeam rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Liverpool"/>
         <homeTeam rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Leicester"/>
         <dateGame rdf:datatype="http://www.w3.org/2001/XMLSchema#string">13/02/21</dateGame>
-        <fullTimeAwayGoal rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1</fullTimeAwayGoal>
-        <fullTimeHomeGoal rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3</fullTimeHomeGoal>
+        <fullTimeAwayGoal rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</fullTimeAwayGoal>
+        <fullTimeHomeGoal rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</fullTimeHomeGoal>
     </owl:NamedIndividual>
     
 

@@ -1,4 +1,5 @@
 digraph {
+  overlap=scale;
   charset="utf-8";
 
   // Edges
