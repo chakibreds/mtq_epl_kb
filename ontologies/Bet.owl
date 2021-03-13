@@ -368,6 +368,22 @@
     
 
 
+    <!-- http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#GamePlayed -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#GamePlayed">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Game"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#GameUpComing -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#GameUpComing">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Game"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Manager -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Manager">
@@ -425,6 +441,8 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Game"/>
         <awayTeam rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Liverpool"/>
         <homeTeam rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Leicester"/>
+        <looser rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Liverpool"/>
+        <winner rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Leicester"/>
         <dateGame rdf:datatype="http://www.w3.org/2001/XMLSchema#string">13/02/21</dateGame>
         <fullTimeAwayGoal rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</fullTimeAwayGoal>
         <fullTimeHomeGoal rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</fullTimeHomeGoal>
