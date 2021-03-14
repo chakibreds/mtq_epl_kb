@@ -402,9 +402,10 @@
     
 
 
-    <!-- http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#LaiVSLiv_130221 -->
+    <!-- http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#LeiVSLiv_130221 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#LaiVSLiv_130221">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#LeiVSLiv_130221">
+        <rdf:type rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#GamePlayed"/>
         <awayTeam rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Liverpool"/>
         <homeTeam rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Leicester"/>
         <looser rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Liverpool"/>
@@ -420,6 +421,8 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Leicester">
         <rdf:type rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Team"/>
+        <drawAgainst rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Liverpool"/>
+        <winAgainst rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Liverpool"/>
         <currentForm rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WDLWW</currentForm>
         <nDraw rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</nDraw>
         <nLose rdf:datatype="http://www.w3.org/2001/XMLSchema#int">7</nLose>
@@ -430,12 +433,27 @@
     
 
 
+    <!-- http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#LivVsLei140321 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#LivVsLei140321">
+        <rdf:type rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#GamePlayed"/>
+        <awayTeam rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Leicester"/>
+        <homeTeam rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Liverpool"/>
+        <refereedBy rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#R_AT"/>
+        <dateGame rdf:datatype="http://www.w3.org/2001/XMLSchema#string">14/03/21</dateGame>
+        <fullTimeAwayGoal rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</fullTimeAwayGoal>
+        <fullTimeHomeGoal rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</fullTimeHomeGoal>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Liverpool -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Liverpool">
         <rdf:type rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Team"/>
+        <drawAgainst rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Leicester"/>
+        <looseAgainst rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Leicester"/>
         <managedBy rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#M_JK"/>
-        <playedAgainst rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Leicester"/>
         <currentForm rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LLWLL</currentForm>
         <nDraw rdf:datatype="http://www.w3.org/2001/XMLSchema#int">7</nDraw>
         <nLose rdf:datatype="http://www.w3.org/2001/XMLSchema#int">9</nLose>
@@ -469,7 +487,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#R_AT">
         <rdf:type rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Referee"/>
-        <referee rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#LaiVSLiv_130221"/>
+        <referee rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#LeiVSLiv_130221"/>
         <awayWin rdf:datatype="http://www.w3.org/2001/XMLSchema#int">53</awayWin>
         <homeWin rdf:datatype="http://www.w3.org/2001/XMLSchema#int">52</homeWin>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A. Tylor</rdfs:label>

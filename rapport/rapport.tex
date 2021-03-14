@@ -277,6 +277,59 @@ Mais ce genre d'équivalence ne peut être déduite par le raisonneur de Protég
 
 \subsubsection{Les contraintes favorisent la victoire}
 
+L'idée générale est de déduire des relations, entre une équipe et un match à venir, qui indiques que cette équipe a des chances de gagner ce match. Pour cela, on définit les propriétés suivantes : 
+
+\begin{tabular}{| p{5cm} | l | c | c |}
+  \hline
+  Détail & Nom de la propriétés & Domaine & Co-domaine\\ \hline
+  l'équipe a de forte chances de gagner ce match & highProb & Team & GameUpComing  \\ \hline
+  l'équipe a des chances de gagner ce match & medProb & Team & GameUpComing  \\ \hline
+  l'équipe a peu de chances de gagner ce match & lowProb & Team & GameUpComing  \\
+  \hline
+\end{tabular}
+
+Avant de définir concrétement ces propriétés, on doit d'abord définir les facteurs qui favorisent la victoire d'une équipe.
+
+\paragraph{Contraintes de base}
+
+Elles prendront la forme d’une propriété dont le domaine est \textit{Team}.
+
+\begin{tabular}{| p{5cm} | l | c | c |}
+  \hline
+  Détail & Nom de la propriétés & Domaine & Co-domaine\\ \hline
+  L'équipe joue à domicile & playGameHome & Team & Game  \\ \hline
+  L'équipe a un meilleur classement que son adversaire & bestRankThan & Team & Team  \\ \hline
+  l'équipe a une meilleur forme que son adversaire & bestFormThan & Team & Team  \\ \hline
+  aucune défaite avec cet arbitre & neverLooseWith & Team & Referee \\ \hline
+  ... & ... & ... & ...\\
+  \hline
+\end{tabular}
+
+\paragraph{Généralisation des contraintes} Une fois les contraintes de base définit et afin de simplifier la définition des relations finales, nous passons par cette étape de généralisation des contraintes de base. Cela consiste en la transformation des propriétés précédemment défini en propriétés qui ont toutes comme domaine \textit{Team} et comme co-domaine \textit{GameUpComing}.
+
+Par exemple, la propriété \textit{Team} \textit{bestRankThan} \textit{Team} va devenir \textit{Team} \textit{c2} \textit{GameUpComing}. La sémantique associée à \textit{c2} sera : \guillemotleft une équipe a un meilleur classement que l'équipe contre laquelle elle va jouer à ce match.\guillemotright
+
+\lstinputlisting[firstline=7,lastline=20,caption=Requête qui transforme \textit{bestRankThan} en \textit{c2}]{../ontologies/sparql-construct/generalizaion.sql}
+
+On aura donc ce qui suit :
+\begin{description}
+  \item[c1] associée a \textit{playGameHome}
+  \item[c2] associée a \textit{bestRankThan}
+  \item[c3] associée a \textit{bestFormThan}
+  \item[c4] associée a \textit{neverLooseWith}
+  \item[c5] associée a \dots
+\end{description}
+
+\paragraph{Conjonctions des contraintes}
+
+Enfin, les propriétés finales ne seront que des conjonctions des contraintes généralisées.
+
+\[
+  highProb(t,g) \equiv c_1(t,g) \wedge \dots \wedge c_n(t,g)
+\]
+
+\nb En les définissant ainsi, alors implicitement \textit{highProb} devient une super-propriété de toutes les autres et \textit{medProb} est la super-propriété de \textit{lowProb}.
+
 \subsection{Constitution de la ABOX}
 
 \subsection{Autres composants}

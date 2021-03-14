@@ -12,6 +12,7 @@ CONSTRUCT {
 }
 WHERE { 
     ?winner rdf:type bet:Team.
+    ?looser rdf:type bet:Team.
 	?game rdf:type bet:GamePlayed.
 	{
         ?game bet:fullTimeHomeGoal ?h.
