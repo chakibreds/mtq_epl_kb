@@ -1,20 +1,34 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#"
-     xml:base="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5"
+<rdf:RDF
+     xml:base="http://www.semanticweb.org/massy/ontologies/2021/2/bet"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:untitled-ontology-5="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#">
+     xmlns:bet="http://www.semanticweb.org/massy/ontologies/2021/2/bet">
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#LaiVSLiv_130221">
-        <rdf:type rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Game"/>
-        <awayTeam rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Liverpool"/>
-        <homeTeam rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Leicester"/>
-        <dateGame rdf:datatype="http://www.w3.org/2001/XMLSchema#string">13/02/21</dateGame>
-        <fullTimeAwayGoal rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1</fullTimeAwayGoal>
-        <fullTimeHomeGoal rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3</fullTimeHomeGoal>
+     <owl:NamedIndividual rdf:about="bet:LaiVSLiv_130221">
+        <rdf:type rdf:resource="bet:Game"/>
+        <rdf:type rdf:resource="bet:GamePlayed"/>
+        <bet:awayTeam rdf:resource="bet:Liverpool"/>
+        <bet:homeTeam rdf:resource="bet:Leicester"/>
+        <bet:looser rdf:resource="bet:Liverpool"/>
+        <bet:refereedBy rdf:resource="bet:R_AT"/>
+        <bet:teams rdf:resource="bet:Leicester"/>
+        <bet:teams rdf:resource="bet:Liverpool"/>
+        <bet:winner rdf:resource="bet:Leicester"/>
+        <bet:dateGame rdf:datatype="http://www.w3.org/2001/XMLSchema#string">13/02/21</bet:dateGame>
+        <bet:fullTimeAwayGoal rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</bet:fullTimeAwayGoal>
+        <bet:fullTimeHomeGoal rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</bet:fullTimeHomeGoal>
     </owl:NamedIndividual>
 
+    <owl:NamedIndividual rdf:about="bet:R_AT">
+        <rdf:type rdf:resource="bet:Person"/>
+        <rdf:type rdf:resource="bet:Referee"/>
+        <bet:referee rdf:resource="bet:LaiVSLiv_130221"/>
+        <bet:awayWin rdf:datatype="http://www.w3.org/2001/XMLSchema#int">53</bet:awayWin>
+        <bet:homeWin rdf:datatype="http://www.w3.org/2001/XMLSchema#int">52</bet:homeWin>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A. Tylor</rdfs:label>
+    </owl:NamedIndividual>
 </rdf:RDF>

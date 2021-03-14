@@ -4,7 +4,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX bet: <http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#>
 
-# This SPARQL query add winner, looser relation to the KB
+# This SPARQL query add winner, looser propreties to the KB
 
 CONSTRUCT {
     ?game bet:winner ?winner.

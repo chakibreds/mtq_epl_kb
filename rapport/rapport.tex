@@ -30,7 +30,7 @@
   backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
   basicstyle=\footnotesize,        % the size of the fonts that are used for the code
   breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
-  breaklines=true,                 % sets automatic line breaking
+  breaklines=false,                 % sets automatic line breaking
   captionpos=b,                    % sets the caption-position to bottom
   commentstyle=\color{mygreen},    % comment style
   deletekeywords={...},            % if you want to delete keywords from the given language
@@ -39,9 +39,9 @@
   firstnumber=0,                   % start line enumeration with line 1000
   frame=single,	                   % adds a frame around the code
   keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
-  keywordstyle=\color{blue},       % keyword style
+  keywordstyle=\color{magenta},       % keyword style
   %language=C++,                    % the language of the code
-  morekeywords={*,...},            % if you want to add more keywords to the set
+  morekeywords={PREFIX,FILTER,UNION,WHERE,CONSTRUCT},            % if you want to add more keywords to the set
   numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
   numbersep=5pt,                   % how far the line-numbers are from the code
   numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
@@ -49,9 +49,9 @@
   showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
   showstringspaces=false,          % underline spaces within strings only
   showtabs=false,                  % show tabs within strings adding particular underscores
-  stepnumber=1,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  stepnumber=2,                    % the step between two line-numbers. If it's 1, each line will be numbered
   stringstyle=\color{mymauve},     % string literal style
-  tabsize=2,	                   % sets default tabsize to 2 spaces
+  tabsize=4,	                   % sets default tabsize to 2 spaces
   literate=
   {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
   {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
@@ -165,7 +165,7 @@ Après avoir défini le contexte métier ainsi que les objectifs voulus, nous av
 
 La première étape consiste en la définition de la composante terminologique (la TBOX).
 
-\subsubsection{Les classes et propriètes de base}
+\subsubsection{Les classes et propriétés de base}
 
 \paragraph{Team}
 
@@ -174,7 +174,7 @@ On a commencé par la plus évidente, une équipe de football.
 \begin{tabular}{| l | l | c | c | p{3cm} |}
   \hline
   \multicolumn{5}{|c|}{Propriètes de la classe \textbf{Team}} \\ \hline
-  Détail & Nom de la propriètes & Domaine & Co-domaine & Notes \\ \hline
+  Détail & Nom de la propriétés & Domaine & Co-domaine & Notes \\ \hline
   le nom d'une équipe & rdfs:label  & X & X &  \\ \hline
   Date de création & creationDate & Team & String &  \\ \hline
   Joue un match & PlayedAGame & Team & Game &  \\ \hline
@@ -183,7 +183,12 @@ On a commencé par la plus évidente, une équipe de football.
   Nombre de victoire & nWin & Team & int &  \\ \hline
   Nombre de match Nul & nDraw & Team & int &  \\ \hline
   Nombre de défaite & nLose & Team & int &  \\ \hline
-  La forme Actuel & hasForme & Team & String & eg. "WWWDL" \\ 
+  La forme Actuel & currentFrom & Team & String & eg. "WWWDL" \\ \hline
+  Joue ce match à domicile & playGameHome & Team & Game & \\ \hline
+  Joue ce match à l'extérieur & playGameAway & Team & Game & \\ \hline
+  A gagner ce match & winner & Team & GamePlayed & \\ \hline
+  A perdu ce match & looser & Team & GamePlayed & \\ \hline
+  A joué contre cette équipe & playedAgainst & Team & Team & \\
   \hline
 \end{tabular}
 
@@ -194,36 +199,85 @@ Chaque équipe a un entraîneur. Le but de cette classe est de pouvoir définir 
 \begin{tabular}{| l | l | c | c | p{3cm} |}
   \hline
   \multicolumn{5}{|c|}{Propriètes de la classe \textbf{Manager}} \\ \hline
-  Détail & Nom de la propriètes & Domaine & Co-domaine & Notes \\ \hline
+  Détail & Nom de la propriétés & Domaine & Co-domaine & Notes \\ \hline
   Nom de l'entraîneur & rdfs:label & X  & X  &  \\ \hline
   Entraîne une équipe & Manage & Manager & Team &  \\
 \hline
 \end{tabular}
 
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\textwidth]{img/team.png}
+  \caption{Représenation d'une équipe et son entraîneur}
+\end{figure}
+
 \paragraph{Referee}
 
 Chaque match de football se dispute sous le contrôle d’un arbitre central, disposant de toute l’autorité nécessaire pour veiller à l’application des Lois du Jeu dans le cadre du match qu’il est appelé à diriger. Bien qu'il est tenu d'être le plus neutre possible, ils influent souvent sur la stratégie choisie par les entraîneurs.
 
-
 \begin{tabular}{| l | l | c | c | p{3cm} |}
   \hline
   \multicolumn{5}{|c|}{Propriètes de la classe \textbf{Referee}} \\ \hline
-  Détail & Nom de la propriètes & Domaine & Co-domaine & Notes \\ \hline
+  Détail & Nom de la propriétés & Domaine & Co-domaine & Notes \\ \hline
   Nom & rdfs:label  & X  &X  &  \\ \hline
   Arbitre un match & referee & Referee & Game & contraire de redereedBy  \\ \hline
-  Nombre de HomeWIn & HomeWin & Referee & int  & Nombre de match que l'arbitre a fait gagner à l'équipe jouant à domicile  \\ \hline
-  Nombre de AwayWin & AwayWin & Referee & int & Nombre de match que l'arbitre a fait gagner à l'équipe jouant à l'extérieur \\ \hline
+  Nombre de HomeWIn & homeWin & Referee & int  & Nombre de match que l'arbitre a fait gagner à l'équipe jouant à domicile  \\ \hline
+  Nombre de AwayWin & awayWin & Referee & int & Nombre de match que l'arbitre a fait gagner à l'équipe jouant à l'extérieur \\ \hline
   Nombre de matchs nuls & refereeDraw & Referee & int &  \\ 
   \hline
 \end{tabular}
 
+\nb Les propriétés \textit{homeWin}, \textit{awayWin} et \textit{refereeDraw} sont utiles pour voir si un arbitre est plutôt avantageux pour les équipes jouant à domicile ou à l’extérieur.
 
 \paragraph{Game}
 
-\subsubsection{Les propriètes ?inférer}
+On arrive ici au cœur du problème. Il s’agit de définir un match et ses propriétés les plus utiles pour atteindre nos objectifs. On a décidé qu’il fallait différencier les matchs qui se sont déjà joués des matches qui arrivent. La classe \textit{Game} a donc deux sous-classes : \textit{GamePlayed} et \textit{GameUpComing}. Les propriétés associées à ces classes sont les suivantes :
+
+\begin{tabular}{| l | l | c | c | p{3cm} |}
+  \hline
+  \multicolumn{5}{|c|}{Propriètes de la classe \textbf{Game} et ses sous-classes} \\ \hline
+  Détail & Nom de la propriétés & Domaine & Co-domaine & Notes \\ \hline
+  Date du match & dateGame & Game & string & … \\ \hline
+  L'équipe qui joue à domicile & homeTeam  & Game & Team& \\ \hline
+  L'équipe qui joue à l'extérieur & awayTeam & Game & Team& \\ \hline 
+  Nombre de but domicile& fullTimeHomeGoal & GamePlayed & int & … \\ \hline
+  Nombre de but extérieur& fullTimeAwayGoal & GamePlayed & int& … \\ \hline
+  L'arbitre du match & refereedBy & Game & Referee & Contraire de referee \\ \hline
+  Vainqueur & winner & GamePlayed & Team & Le vainqueur d'un match \\ \hline
+  Perdant & looser & GamePlayed & Team & Le perdant d'un match \\
+  \hline
+\end{tabular}
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=0.96\textwidth]{img/game.png}
+  \caption{Représenation d'un match et son arbitre}
+\end{figure}
+
+\subsubsection{Les propriétés inférées}
+
+Certaines des ces propriétés ne sont pas à définir explicitement dans la \textbf{ABOX}, car elles seront inférées automatiquement par le raisonneur de Protégé ou déduites par des requêtes SPARQL.
+
+\paragraph{manager et managedBy}
+
+\textit{manager} et \textit{managedBy} sont un exemple des propriétés inférées par le raisonneur. En effet, il suffit d'ajouter à la \textbf{ABOX} que M \textit{manage} T alors il déduira automatiquement que T \textit{managedBy} M.
+
+\paragraph{winner et looser}
+
+Le cas de \textit{winner} et \textit{looser} est plus particulier. Pour qu’une équipe soit la vainqueur d’un match alors elle doit participer à ce match et marquer plus de buts que son adversaire. Donc on peut l’écrire de cette façon :
+
+\begin{multline*}
+winner(g,t) \equiv \exists a,\exists h  fullTimeHomeGoal(g,h) \ \wedge \ fullTimeAwayGoal(g, a) \ \wedge \ \\
+  (homeTeam(g,t) \ \wedge \ h > a)  \vee (awayTeam(g,t) \ \wedge \  a > h) \\
+\end{multline*}
+
+Mais ce genre d'équivalence ne peut être déduite par le raisonneur de Protégé. Pour remédier à cela nous avons écrit une requête SPARQL pour déduire automatiquement ces relations.
+
+\lstinputlisting[caption=Requête qui déduit les propriétés \textit{winner} et \textit{looser}]{../ontologies/sparql-construct/winner-looser.sql}
+
+\subsubsection{Les contraintes favorisent la victoire}
 
 \subsection{Constitution de la ABOX}
-
 
 \subsection{Autres composants}
 
