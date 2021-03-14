@@ -1,0 +1,261 @@
+,Date,HomeTeam,AwayTeam,FTHG,FTAG,Referee
+0,09/08/2019,Liverpool,Norwich,4,1,M Oliver
+1,10/08/2019,West Ham,Man City,0,5,M Dean
+2,10/08/2019,Bournemouth,Sheffield United,1,1,K Friend
+3,10/08/2019,Burnley,Southampton,3,0,G Scott
+4,10/08/2019,Crystal Palace,Everton,0,0,J Moss
+5,10/08/2019,Watford,Brighton,0,3,C Pawson
+6,10/08/2019,Tottenham,Aston Villa,3,1,C Kavanagh
+7,11/08/2019,Leicester,Wolves,0,0,A Marriner
+8,11/08/2019,Newcastle,Arsenal,0,1,M Atkinson
+9,11/08/2019,Man United,Chelsea,4,0,A Taylor
+10,17/08/2019,Arsenal,Burnley,2,1,M Dean
+11,17/08/2019,Aston Villa,Bournemouth,1,2,M Atkinson
+12,17/08/2019,Brighton,West Ham,1,1,A Taylor
+13,17/08/2019,Everton,Watford,1,0,L Mason
+14,17/08/2019,Norwich,Newcastle,3,1,S Attwell
+15,17/08/2019,Southampton,Liverpool,1,2,A Marriner
+16,17/08/2019,Man City,Tottenham,2,2,M Oliver
+17,18/08/2019,Sheffield United,Crystal Palace,1,0,D Coote
+18,18/08/2019,Chelsea,Leicester,1,1,O Langford
+19,19/08/2019,Wolves,Man United,1,1,J Moss
+20,23/08/2019,Aston Villa,Everton,2,0,M Oliver
+21,24/08/2019,Norwich,Chelsea,2,3,M Atkinson
+22,24/08/2019,Brighton,Southampton,0,2,K Friend
+23,24/08/2019,Man United,Crystal Palace,1,2,P Tierney
+24,24/08/2019,Sheffield United,Leicester,1,2,A Madley
+25,24/08/2019,Watford,West Ham,1,3,C Kavanagh
+26,24/08/2019,Liverpool,Arsenal,3,1,A Taylor
+27,25/08/2019,Bournemouth,Man City,1,3,A Marriner
+28,25/08/2019,Tottenham,Newcastle,0,1,M Dean
+29,25/08/2019,Wolves,Burnley,1,1,C Pawson
+30,31/08/2019,Southampton,Man United,1,1,M Dean
+31,31/08/2019,Chelsea,Sheffield United,2,2,S Attwell
+32,31/08/2019,Crystal Palace,Aston Villa,1,0,K Friend
+33,31/08/2019,Leicester,Bournemouth,3,1,P Bankes
+34,31/08/2019,Man City,Brighton,4,0,J Moss
+35,31/08/2019,Newcastle,Watford,1,1,G Scott
+36,31/08/2019,West Ham,Norwich,2,0,P Tierney
+37,31/08/2019,Burnley,Liverpool,0,3,C Kavanagh
+38,01/09/2019,Everton,Wolves,3,2,A Taylor
+39,01/09/2019,Arsenal,Tottenham,2,2,M Atkinson
+40,14/09/2019,Liverpool,Newcastle,3,1,A Marriner
+41,14/09/2019,Brighton,Burnley,1,1,M Oliver
+42,14/09/2019,Man United,Leicester,1,0,M Atkinson
+43,14/09/2019,Sheffield United,Southampton,0,1,L Mason
+44,14/09/2019,Tottenham,Crystal Palace,4,0,C Pawson
+45,14/09/2019,Wolves,Chelsea,2,5,G Scott
+46,14/09/2019,Norwich,Man City,3,2,K Friend
+47,15/09/2019,Bournemouth,Everton,3,1,P Tierney
+48,15/09/2019,Watford,Arsenal,2,2,A Taylor
+49,16/09/2019,Aston Villa,West Ham,0,0,M Dean
+50,20/09/2019,Southampton,Bournemouth,1,3,C Kavanagh
+51,21/09/2019,Leicester,Tottenham,2,1,P Tierney
+52,21/09/2019,Burnley,Norwich,2,0,D Coote
+53,21/09/2019,Everton,Sheffield United,0,2,S Hooper
+54,21/09/2019,Man City,Watford,8,0,M Dean
+55,21/09/2019,Newcastle,Brighton,0,0,M Atkinson
+56,22/09/2019,Crystal Palace,Wolves,1,1,S Attwell
+57,22/09/2019,West Ham,Man United,2,0,A Taylor
+58,22/09/2019,Arsenal,Aston Villa,3,2,J Moss
+59,22/09/2019,Chelsea,Liverpool,1,2,M Oliver
+60,28/09/2019,Sheffield United,Liverpool,0,1,A Taylor
+61,28/09/2019,Aston Villa,Burnley,2,2,L Mason
+62,28/09/2019,Bournemouth,West Ham,2,2,S Attwell
+63,28/09/2019,Chelsea,Brighton,2,0,C Kavanagh
+64,28/09/2019,Crystal Palace,Norwich,2,0,J Moss
+65,28/09/2019,Tottenham,Southampton,2,1,G Scott
+66,28/09/2019,Wolves,Watford,2,0,P Tierney
+67,28/09/2019,Everton,Man City,1,3,M Oliver
+68,29/09/2019,Leicester,Newcastle,5,0,C Pawson
+69,30/09/2019,Man United,Arsenal,1,1,K Friend
+70,05/10/2019,Brighton,Tottenham,3,0,J Moss
+71,05/10/2019,Burnley,Everton,1,0,G Scott
+72,05/10/2019,Liverpool,Leicester,2,1,C Kavanagh
+73,05/10/2019,Norwich,Aston Villa,1,5,A Madley
+74,05/10/2019,Watford,Sheffield United,0,0,A Marriner
+75,05/10/2019,West Ham,Crystal Palace,1,2,M Oliver
+76,06/10/2019,Arsenal,Bournemouth,1,0,M Atkinson
+77,06/10/2019,Man City,Wolves,0,2,C Pawson
+78,06/10/2019,Southampton,Chelsea,1,4,P Tierney
+79,06/10/2019,Newcastle,Man United,1,0,M Dean
+80,19/10/2019,Everton,West Ham,2,0,P Tierney
+81,19/10/2019,Aston Villa,Brighton,2,1,D Coote
+82,19/10/2019,Bournemouth,Norwich,0,0,L Mason
+83,19/10/2019,Chelsea,Newcastle,1,0,A Marriner
+84,19/10/2019,Leicester,Burnley,2,1,J Moss
+85,19/10/2019,Tottenham,Watford,1,1,C Kavanagh
+86,19/10/2019,Wolves,Southampton,1,1,P Bankes
+87,19/10/2019,Crystal Palace,Man City,0,2,A Taylor
+88,20/10/2019,Man United,Liverpool,1,1,M Atkinson
+89,21/10/2019,Sheffield United,Arsenal,1,0,M Dean
+90,25/10/2019,Southampton,Leicester,0,9,A Marriner
+91,26/10/2019,Man City,Aston Villa,3,0,G Scott
+92,26/10/2019,Brighton,Everton,3,2,A Madley
+93,26/10/2019,Watford,Bournemouth,0,0,M Dean
+94,26/10/2019,West Ham,Sheffield United,1,1,D Coote
+95,26/10/2019,Burnley,Chelsea,2,4,M Oliver
+96,27/10/2019,Newcastle,Wolves,1,1,K Friend
+97,27/10/2019,Arsenal,Crystal Palace,2,2,M Atkinson
+98,27/10/2019,Liverpool,Tottenham,2,1,A Taylor
+99,27/10/2019,Norwich,Man United,1,3,S Attwell
+100,02/11/2019,Bournemouth,Man United,1,0,C Kavanagh
+101,02/11/2019,Arsenal,Wolves,1,1,M Oliver
+102,02/11/2019,Aston Villa,Liverpool,1,2,J Moss
+103,02/11/2019,Brighton,Norwich,2,0,K Friend
+104,02/11/2019,Man City,Southampton,2,1,L Mason
+105,02/11/2019,Sheffield United,Burnley,3,0,S Hooper
+106,02/11/2019,West Ham,Newcastle,2,3,S Attwell
+107,02/11/2019,Watford,Chelsea,1,2,A Taylor
+108,03/11/2019,Crystal Palace,Leicester,0,2,P Tierney
+109,03/11/2019,Everton,Tottenham,1,1,M Atkinson
+110,08/11/2019,Norwich,Watford,0,2,A Marriner
+111,09/11/2019,Chelsea,Crystal Palace,2,0,M Dean
+112,09/11/2019,Burnley,West Ham,3,0,K Friend
+113,09/11/2019,Newcastle,Bournemouth,2,1,M Atkinson
+114,09/11/2019,Southampton,Everton,1,2,P Tierney
+115,09/11/2019,Tottenham,Sheffield United,1,1,G Scott
+116,09/11/2019,Leicester,Arsenal,2,0,C Kavanagh
+117,10/11/2019,Man United,Brighton,3,1,J Moss
+118,10/11/2019,Wolves,Aston Villa,2,1,A Taylor
+119,10/11/2019,Liverpool,Man City,3,1,M Oliver
+120,23/11/2019,West Ham,Tottenham,2,3,M Oliver
+121,23/11/2019,Arsenal,Southampton,2,2,S Attwell
+122,23/11/2019,Bournemouth,Wolves,1,2,S Hooper
+123,23/11/2019,Brighton,Leicester,0,2,M Dean
+124,23/11/2019,Crystal Palace,Liverpool,1,2,K Friend
+125,23/11/2019,Everton,Norwich,0,2,A Taylor
+126,23/11/2019,Watford,Burnley,0,3,P Tierney
+127,23/11/2019,Man City,Chelsea,2,1,M Atkinson
+128,24/11/2019,Sheffield United,Man United,3,3,A Marriner
+129,25/11/2019,Aston Villa,Newcastle,2,0,L Mason
+130,30/11/2019,Newcastle,Man City,2,2,C Kavanagh
+131,30/11/2019,Burnley,Crystal Palace,0,2,P Bankes
+132,30/11/2019,Chelsea,West Ham,0,1,J Moss
+133,30/11/2019,Liverpool,Brighton,2,1,M Atkinson
+134,30/11/2019,Tottenham,Bournemouth,3,2,L Mason
+135,30/11/2019,Southampton,Watford,2,1,M Oliver
+136,01/12/2019,Norwich,Arsenal,2,2,P Tierney
+137,01/12/2019,Wolves,Sheffield United,1,1,D Coote
+138,01/12/2019,Leicester,Everton,2,1,G Scott
+139,01/12/2019,Man United,Aston Villa,2,2,C Pawson
+140,03/12/2019,Crystal Palace,Bournemouth,1,0,A Taylor
+141,03/12/2019,Burnley,Man City,1,4,J Moss
+142,04/12/2019,Chelsea,Aston Villa,2,1,C Kavanagh
+143,04/12/2019,Leicester,Watford,2,0,C Pawson
+144,04/12/2019,Man United,Tottenham,2,1,P Tierney
+145,04/12/2019,Southampton,Norwich,2,1,K Friend
+146,04/12/2019,Wolves,West Ham,2,0,A Marriner
+147,04/12/2019,Liverpool,Everton,5,2,M Dean
+148,05/12/2019,Sheffield United,Newcastle,0,2,S Attwell
+149,05/12/2019,Arsenal,Brighton,1,2,G Scott
+150,07/12/2019,Everton,Chelsea,3,1,C Pawson
+151,07/12/2019,Bournemouth,Liverpool,0,3,C Kavanagh
+152,07/12/2019,Tottenham,Burnley,5,0,K Friend
+153,07/12/2019,Watford,Crystal Palace,0,0,M Atkinson
+154,07/12/2019,Man City,Man United,1,2,A Taylor
+155,08/12/2019,Aston Villa,Leicester,1,4,M Oliver
+156,08/12/2019,Newcastle,Southampton,2,1,D Coote
+157,08/12/2019,Norwich,Sheffield United,1,2,S Hooper
+158,08/12/2019,Brighton,Wolves,2,2,J Moss
+159,09/12/2019,West Ham,Arsenal,1,3,M Dean
+160,14/12/2019,Liverpool,Watford,2,0,A Marriner
+161,14/12/2019,Burnley,Newcastle,1,0,T Robinson
+162,14/12/2019,Chelsea,Bournemouth,0,1,G Scott
+163,14/12/2019,Leicester,Norwich,1,1,A Madley
+164,14/12/2019,Sheffield United,Aston Villa,2,0,P Bankes
+165,14/12/2019,Southampton,West Ham,0,1,M Atkinson
+166,15/12/2019,Man United,Everton,1,1,M Oliver
+167,15/12/2019,Wolves,Tottenham,1,2,S Attwell
+168,15/12/2019,Arsenal,Man City,0,3,P Tierney
+169,16/12/2019,Crystal Palace,Brighton,1,1,C Pawson
+170,21/12/2019,Everton,Arsenal,0,0,K Friend
+171,21/12/2019,Aston Villa,Southampton,1,3,C Pawson
+172,21/12/2019,Bournemouth,Burnley,0,1,M Atkinson
+173,21/12/2019,Brighton,Sheffield United,0,1,R Jones
+174,21/12/2019,Newcastle,Crystal Palace,1,0,S Hooper
+175,21/12/2019,Norwich,Wolves,1,2,P Bankes
+176,21/12/2019,Man City,Leicester,3,1,M Dean
+177,22/12/2019,Watford,Man United,2,0,L Mason
+178,22/12/2019,Tottenham,Chelsea,0,2,A Taylor
+179,26/12/2019,Tottenham,Brighton,2,1,G Scott
+180,26/12/2019,Aston Villa,Norwich,1,0,C Kavanagh
+181,26/12/2019,Bournemouth,Arsenal,1,1,S Attwell
+182,26/12/2019,Chelsea,Southampton,0,2,J Moss
+183,26/12/2019,Crystal Palace,West Ham,2,1,A Marriner
+184,26/12/2019,Everton,Burnley,1,0,A Taylor
+185,26/12/2019,Sheffield United,Watford,1,1,D Coote
+186,26/12/2019,Man United,Newcastle,4,1,K Friend
+187,26/12/2019,Leicester,Liverpool,0,4,M Oliver
+188,27/12/2019,Wolves,Man City,3,2,M Atkinson
+189,28/12/2019,Brighton,Bournemouth,2,0,P Tierney
+190,28/12/2019,Newcastle,Everton,1,2,L Mason
+191,28/12/2019,Southampton,Crystal Palace,1,1,A Madley
+192,28/12/2019,Watford,Aston Villa,3,0,S Hooper
+193,28/12/2019,Norwich,Tottenham,2,2,K Friend
+194,28/12/2019,West Ham,Leicester,1,2,D Coote
+195,28/12/2019,Burnley,Man United,0,2,M Dean
+196,29/12/2019,Arsenal,Chelsea,1,2,C Pawson
+197,29/12/2019,Liverpool,Wolves,1,0,A Taylor
+198,29/12/2019,Man City,Sheffield United,2,0,C Kavanagh
+199,01/01/2020,Brighton,Chelsea,1,1,S Attwell
+200,01/01/2020,Burnley,Aston Villa,1,2,M Oliver
+201,01/01/2020,Newcastle,Leicester,0,3,M Atkinson
+202,01/01/2020,Southampton,Tottenham,1,0,M Dean
+203,01/01/2020,Watford,Wolves,2,1,A Madley
+204,01/01/2020,Man City,Everton,2,1,A Marriner
+205,01/01/2020,Norwich,Crystal Palace,1,1,J Moss
+206,01/01/2020,West Ham,Bournemouth,4,0,G Scott
+207,01/01/2020,Arsenal,Man United,2,0,C Kavanagh
+208,02/01/2020,Liverpool,Sheffield United,2,0,P Tierney
+209,10/01/2020,Sheffield United,West Ham,1,0,M Oliver
+210,11/01/2020,Crystal Palace,Arsenal,1,1,P Tierney
+211,11/01/2020,Chelsea,Burnley,3,0,K Friend
+212,11/01/2020,Everton,Brighton,1,0,D Coote
+213,11/01/2020,Leicester,Southampton,1,2,L Mason
+214,11/01/2020,Man United,Norwich,4,0,A Taylor
+215,11/01/2020,Wolves,Newcastle,1,1,P Bankes
+216,11/01/2020,Tottenham,Liverpool,0,1,M Atkinson
+217,12/01/2020,Bournemouth,Watford,0,3,M Dean
+218,12/01/2020,Aston Villa,Man City,1,6,J Moss
+219,18/01/2020,Watford,Tottenham,0,0,M Oliver
+220,18/01/2020,Arsenal,Sheffield United,1,1,M Dean
+221,18/01/2020,Brighton,Aston Villa,1,1,A Madley
+222,18/01/2020,Man City,Crystal Palace,2,2,S Scott
+223,18/01/2020,Norwich,Bournemouth,1,0,P Tierney
+224,18/01/2020,Southampton,Wolves,2,3,D England
+225,18/01/2020,West Ham,Everton,1,1,A Marriner
+226,18/01/2020,Newcastle,Chelsea,1,0,C Kavanagh
+227,19/01/2020,Burnley,Leicester,2,1,A Taylor
+228,19/01/2020,Liverpool,Man United,2,0,C Pawson
+229,21/01/2020,Aston Villa,Watford,2,1,M Atkinson
+230,21/01/2020,Bournemouth,Brighton,3,1,K Friend
+231,21/01/2020,Crystal Palace,Southampton,0,2,A Marriner
+232,21/01/2020,Everton,Newcastle,2,2,S Hooper
+233,21/01/2020,Sheffield United,Man City,0,1,L Mason
+234,21/01/2020,Chelsea,Arsenal,2,2,S Attwell
+235,22/01/2020,Leicester,West Ham,4,1,D Coote
+236,22/01/2020,Tottenham,Norwich,2,1,C Kavanagh
+237,22/01/2020,Man United,Burnley,0,2,J Moss
+238,23/01/2020,Wolves,Liverpool,1,2,M Oliver
+239,29/01/2020,West Ham,Liverpool,0,2,J Moss
+240,01/02/2020,Leicester,Chelsea,2,2,L Mason
+241,01/02/2020,Bournemouth,Aston Villa,2,1,A Taylor
+242,01/02/2020,Crystal Palace,Sheffield United,0,1,A Madley
+243,01/02/2020,Liverpool,Southampton,4,0,K Friend
+244,01/02/2020,Newcastle,Norwich,0,0,M Atkinson
+245,01/02/2020,Watford,Everton,2,3,C Pawson
+246,01/02/2020,West Ham,Brighton,3,3,M Oliver
+247,01/02/2020,Man United,Wolves,0,0,P Tierney
+248,02/02/2020,Burnley,Arsenal,0,0,C Kavanagh
+249,02/02/2020,Tottenham,Man City,2,0,M Dean
+250,08/02/2020,Everton,Crystal Palace,3,1,D Coote
+251,08/02/2020,Brighton,Watford,1,1,K Friend
+252,09/02/2020,Sheffield United,Bournemouth,2,1,J Moss
+253,14/02/2020,Wolves,Leicester,0,0,M Dean
+254,15/02/2020,Southampton,Burnley,1,2,S Hooper
+255,15/02/2020,Norwich,Liverpool,0,1,S Attwell
+256,16/02/2020,Aston Villa,Tottenham,2,3,M Atkinson
+257,16/02/2020,Arsenal,Newcastle,4,0,L Mason
+258,17/02/2020,Chelsea,Man United,0,2,A Taylor
+259,19/02/2020,Man City,West Ham,2,0,K Friend
