@@ -1,6 +1,6 @@
 ,rank,team,played,win,draw,loose
-0,1,Manchester City,30,22,5,3
-1,2,Manchester United,28,15,9,4
+0,1,Man City,30,22,5,3
+1,2,Man United,28,15,9,4
 2,3,Leicester City,28,16,5,7
 3,4,Chelsea,29,14,9,6
 4,5,West Ham United,27,14,6,7
@@ -10,8 +10,8 @@
 8,9,Aston Villa,27,12,5,10
 9,10,Arsenal,27,11,5,11
 10,11,Crystal Palace,29,10,7,12
-11,12,Leeds United,28,11,3,14
-12,13,Wolverhampton Wanderers,28,9,8,11
+11,12,Leeds,28,11,3,14
+12,13,Wolves,28,9,8,11
 13,14,Southampton,28,9,6,13
 14,15,Burnley,29,8,9,12
 15,16,Newcastle United,28,7,7,14
