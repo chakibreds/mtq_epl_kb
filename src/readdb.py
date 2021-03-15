@@ -2,12 +2,9 @@ from tbox import Team, Game, GameUpComing, GamePlayed, Manager, Referee
 import pandas as pd
 import sys
 
-def main():
-    rank_file = "../db/actual-ranking.csv"
-    season_files = [
+def get_all(rank_file="../db/actual-ranking.csv",season_files = [
         "../db/2020-21.csv"
-    ]
-
+    ]):
     df_rank = pd.read_csv(rank_file)
     df_seasons = []
     for file in season_files:
@@ -18,7 +15,7 @@ def main():
     referee = seasons_to_referee(df_seasons)
 
     games = seasons_to_gamePlayed(df_seasons, teams, referee)
-    return 0
+    return teams, referee, games
 
 def seasons_to_referee(dfs):
     referee_names = []
@@ -69,4 +66,3 @@ def rank_to_teams(datafram):
             continue
     return teams
 
-main()

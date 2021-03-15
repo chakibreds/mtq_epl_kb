@@ -1,4 +1,5 @@
-# This file define all entities used in the TBOX
+from rdflib import Graph, Literal, RDF, RDFS, URIRef
+from rdflib.namespace import XSD
 
 class Team:
     entity_name = ""
@@ -18,7 +19,7 @@ class Team:
         self.nWin = int(nWin)
         self.nLoose = int(nLoose)
         self.nDraw = int(nDraw)
-        self.currentForm = str(currentForm)
+        self.currentForm = currentForm
         pass
 
     def get_label(self):
@@ -27,8 +28,21 @@ class Team:
     def get_entity_name(self):
         return self.entity_name
 
-    def to_rdf(self):
-        pass
+    def to_rdf(self,ontologie, namespace):
+        team = URIRef(namespace[self.entity_name])
+
+        ontologie.add((team, RDF.type, namespace.Team))
+        ontologie.add((team, RDFS.label, Literal(self.label,datatype=XSD.string)))
+        
+        ontologie.add((team, namespace.rank, Literal(self.rank,datatype=XSD.int)))
+        ontologie.add((team, namespace.nWin, Literal(self.nWin,datatype=XSD.int)))
+        ontologie.add((team, namespace.nLoose, Literal(self.nLoose,datatype=XSD.int)))
+        ontologie.add((team, namespace.nDraw, Literal(self.nDraw,datatype=XSD.int)))
+
+        if self.currentForm is not None:
+            ontologie.add((team, namespace.currentForm, Literal(self.currentForm,datatype=XSD.string)))
+
+
 
     def to_string(self):
         return self.entity_name + " " + \
@@ -39,7 +53,6 @@ class Team:
             str(self.nDraw) + " " + \
             self.currentForm
 
-
 class Manager:
     label =  ""
     entity_name = ""
@@ -47,15 +60,21 @@ class Manager:
 
     def __init__(self, label, team):
         self.label = label
-        self.entity_name = lable.replace(" ", "")
+        self.entity_name = label.replace(" ", "")
         self.team = team
 
     def get_label(self):
         return self.label
 
-    def to_rdf(self):
-        pass
+    def to_rdf(self,ontologie, namespace):
+        manager = URIRef(namespace[self.entity_name])
 
+        ontologie.add((manager, RDF.type, namespace.Manager))
+        ontologie.add((manager, RDFS.label, Literal(self.label,datatype=XSD.string)))
+
+        if self.team is not None:
+            ontologie.add((manager, RDF.manage, namespace[self.team.entity_name]))
+        
 class Referee:
     label = ""
     entity_name = ""
@@ -76,8 +95,19 @@ class Referee:
     def get_entity_name(self):
         return self.entity_name
 
-    def to_rdf(self):
-        pass
+    def to_rdf(self,ontologie, namespace):
+        referee = URIRef(namespace[self.entity_name])
+
+        ontologie.add((referee, RDF.type, namespace.Referee))
+        ontologie.add((referee, RDFS.label, Literal(self.label,datatype=XSD.string)))
+
+        if self.homeWin:
+            ontologie.add((referee, RDF.homeWin, Literal(self.homeWin,datatype=XSD.int)))
+        if self.awayWin:
+            ontologie.add((referee, RDF.awayWin, Literal(self.awayWin,datatype=XSD.int)))
+        if self.refereeDraw:
+            ontologie.add((referee, RDF.refereeDraw, Literal(self.refereeDraw,datatype=XSD.int)))
+
 
 class Game:
     entity_name = ""
@@ -91,13 +121,20 @@ class Game:
         self.homeTeam = homeTeam
         self.awayTeam = awayTeam
         self.referee = referee
-        self.entity_name = homeTeam.get_entity_name()+"VS"+awayTeam.get_entity_name()+self.dateGame
+        self.entity_name = homeTeam.get_entity_name()+"VS"+awayTeam.get_entity_name()+self.dateGame.replace("/","")
 
     def get_entity_name(self):
         return self.entity_name
     
-    def to_rdf(self):
-        pass
+    def to_rdf(self,ontologie, namespace):
+        game = URIRef(namespace[self.entity_name])
+
+        ontologie.add((game, RDF.type, namespace.Game))
+        ontologie.add((game, namespace.dateGame, Literal(self.dateGame,datatype=XSD.string)))
+        ontologie.add((game, namespace.homeTeam, namespace[self.homeTeam.entity_name]))
+        ontologie.add((game, namespace.awayTeam, namespace[self.awayTeam.entity_name]))
+        ontologie.add((game, namespace.refereeBy, namespace[self.referee.entity_name]))
+        
 
     def to_string(self):
         return self.entity_name + " " + \
@@ -115,8 +152,13 @@ class GamePlayed(Game):
         self.fthg = int(fthg)
         self.ftag = int(ftag)
 
-    def to_rdf(self):
-        pass
+    def to_rdf(self,ontologie, namespace):
+        super().to_rdf(ontologie,namespace)
+        game = URIRef(namespace[self.entity_name])
+        
+        ontologie.add((game, RDF.type, namespace.GamePlayed))
+        ontologie.add((game, namespace.fullTimeHomeGoal, Literal(self.fthg,datatype=XSD.int)))
+        ontologie.add((game, namespace.fullTimeHomeGoal, Literal(self.ftag,datatype=XSD.int)))
 
     def to_string(self):
         return super().to_string() + " " + \

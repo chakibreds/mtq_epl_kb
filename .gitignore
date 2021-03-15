@@ -5,3 +5,6 @@ rapport.fls
 rapport.log
 rapport.out
 rapport.synctex.gz
+
+# python
+__pycache__
