@@ -4,9 +4,6 @@ import sparql
 bet = abox.main()
 output = '../ontologies/data.owl'
 
-import sys
-
-
 # raisonneur
 
 dir = '../ontologies/sparql-construct/'
