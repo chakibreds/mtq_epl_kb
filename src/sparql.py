@@ -8,4 +8,5 @@ def sparql_construct(bet, file_name, verbose=False):
         res = bet.query(q)
         if verbose:
             print(len(res),' element added to the ontologie.')
-            
+        for r in res:
+            bet.add(r)

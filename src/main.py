@@ -3,10 +3,6 @@ import sparql
 
 bet = abox.main()
 output = '../ontologies/data.owl'
-bet.serialize(destination=output,format="xml")
-
-import sys
-sys.exit(0)
 
 # raisonneur
 
@@ -21,3 +17,5 @@ queries = [
 for query in queries:
     file_name = dir+query
     sparql.sparql_construct(bet,file_name,verbose=True)
+
+bet.serialize(destination=output,format="xml")
