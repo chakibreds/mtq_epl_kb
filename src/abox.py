@@ -8,8 +8,7 @@ def db_to_graph(bet, namespace):
     ns = Namespace(namespace)
     bet.bind("bet",ns)
     
-    teams, referee, games = db.get_all()
-
+    teams, referee, games, managers, upComingGames = db.get_all()
     for team in teams:
         team.to_rdf(bet,ns)
 
@@ -18,6 +17,12 @@ def db_to_graph(bet, namespace):
 
     for game in games:
         game.to_rdf(bet, ns)
+
+    for game in upComingGames:
+        game.to_rdf(bet, ns)
+    
+    for manager in managers: 
+        manager.to_rdf(bet, ns)
 
 def load_graph(file_name="../ontologies/Bet.owl",format="xml"):
     g = rdflib.Graph()

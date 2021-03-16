@@ -2,7 +2,7 @@ import abox
 import sparql
 
 bet = abox.main()
-output = './TestSparql.owl'
+output = '../ontologies/TestSparql.owl'
 bet.serialize(destination=output,format="xml")
 
 # raisonneur

@@ -73,7 +73,7 @@ class Manager:
         ontologie.add((manager, RDFS.label, Literal(self.label,datatype=XSD.string)))
 
         if self.team is not None:
-            ontologie.add((manager, RDF.manage, namespace[self.team.entity_name]))
+            ontologie.add((manager, namespace.manage, namespace[self.team.entity_name]))
         
 class Referee:
     label = ""
@@ -165,6 +165,7 @@ class GamePlayed(Game):
             str(self.ftag)
 
 class GameUpComing(Game):
-    def to_rdf(self):
-        pass
-
+    def to_rdf(self, ontologie, namespace): 
+        super().to_rdf(ontologie,namespace)
+        game = URIRef(namespace[self.entity_name])
+        ontologie.add((game, RDF.type, namespace.GameUpComing))
