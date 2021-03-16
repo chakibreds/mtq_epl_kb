@@ -31,7 +31,8 @@ def load_graph(file_name="../ontologies/Bet.owl",format="xml"):
     return g
 
 def main():
-    bet = load_graph()
+    #bet = load_graph()
+    bet = rdflib.Graph()
     db_to_graph(bet, "http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#")
     
     return bet
