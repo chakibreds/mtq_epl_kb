@@ -108,7 +108,6 @@ class Referee:
         if self.refereeDraw:
             ontologie.add((referee, RDF.refereeDraw, Literal(self.refereeDraw,datatype=XSD.int)))
 
-
 class Game:
     entity_name = ""
     dateGame = ""
@@ -133,7 +132,7 @@ class Game:
         ontologie.add((game, namespace.dateGame, Literal(self.dateGame,datatype=XSD.string)))
         ontologie.add((game, namespace.homeTeam, namespace[self.homeTeam.entity_name]))
         ontologie.add((game, namespace.awayTeam, namespace[self.awayTeam.entity_name]))
-        ontologie.add((game, namespace.refereeBy, namespace[self.referee.entity_name]))
+        ontologie.add((game, namespace.refereedBy, namespace[self.referee.entity_name]))
         
 
     def to_string(self):
@@ -158,7 +157,7 @@ class GamePlayed(Game):
         
         ontologie.add((game, RDF.type, namespace.GamePlayed))
         ontologie.add((game, namespace.fullTimeHomeGoal, Literal(self.fthg,datatype=XSD.int)))
-        ontologie.add((game, namespace.fullTimeHomeGoal, Literal(self.ftag,datatype=XSD.int)))
+        ontologie.add((game, namespace.fullTimeAwayGoal, Literal(self.ftag,datatype=XSD.int)))
 
     def to_string(self):
         return super().to_string() + " " + \
