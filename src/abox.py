@@ -34,5 +34,9 @@ def main():
     #bet = load_graph()
     bet = rdflib.Graph()
     db_to_graph(bet, "http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#")
-    
+    output = '../ontologies/data.owl'
+    bet.serialize(destination=output,format="xml")
+
     return bet
+
+main()

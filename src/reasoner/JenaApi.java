@@ -1,3 +1,4 @@
+package reasoner;
 import java.io.InputStream;
 
 import org.apache.jena.rdf.model.Model;
