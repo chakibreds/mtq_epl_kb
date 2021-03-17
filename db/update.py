@@ -17,12 +17,6 @@ def main():
     # rename
     ladder.columns = ["rank", "team", "played", "win", "draw", "loose"]
 
-    form = []
-    for index, team in ladder.iterrows():
-        form.append(get_currentForm(team["team"],scores))
-
-    ladder["currentForm"] = form
-
     ladder.to_csv("actual-ranking.csv")
 
 def get_currentForm(teamName, scores):
@@ -45,5 +39,15 @@ def get_currentForm(teamName, scores):
 
     return i
 
-main()         
+#main()         
 
+ladder = pd.read_csv("actual-ranking.csv")
+scores = pd.read_csv("2020-21.csv")
+
+form = []
+for index, team in ladder.iterrows():
+    form.append(get_currentForm(team["team"],scores))
+
+ladder["currentForm"] = form
+
+ladder.to_csv("actual-ranking.csv")

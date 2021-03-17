@@ -39,4 +39,5 @@ def main():
 
     return bet
 
-main()
+if __name__ == "__main__":
+    main()

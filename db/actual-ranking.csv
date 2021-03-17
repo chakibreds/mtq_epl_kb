@@ -1,21 +1,21 @@
-,rank,team,played,win,draw,loose
-0,1,Man City,30,22,5,3
-1,2,Man United,28,15,9,4
-2,3,Leicester,28,16,5,7
-3,4,Chelsea,29,14,9,6
-4,5,West Ham,27,14,6,7
-5,6,Everton,28,14,4,10
-6,7,Tottenham,27,13,6,8
-7,8,Liverpool,28,12,7,9
-8,9,Aston Villa,27,12,5,10
-9,10,Arsenal,27,11,5,11
-10,11,Crystal Palace,29,10,7,12
-11,12,Leeds,28,11,3,14
-12,13,Wolves,28,9,8,11
-13,14,Southampton,28,9,6,13
-14,15,Burnley,29,8,9,12
-15,16,Newcastle,28,7,7,14
-16,17,Brighton,27,5,11,11
-17,18,Fulham,29,5,11,13
-18,19,West Brom,29,3,9,17
-19,20,Sheffield United,28,4,2,22
+,Unnamed: 0,rank,team,played,win,draw,loose,currentForm
+0,0,1,Man City,30,22,5,3,12
+1,1,2,Man United,29,16,9,4,11
+2,2,3,Leicester,29,17,5,7,10
+3,3,4,Chelsea,29,14,9,6,9
+4,4,5,West Ham,28,14,6,8,9
+5,5,6,Liverpool,29,13,7,9,6
+6,6,7,Everton,28,14,4,10,9
+7,7,8,Tottenham,28,13,6,9,9
+8,8,9,Aston Villa,27,12,5,10,5
+9,9,10,Arsenal,28,12,5,11,10
+10,10,11,Crystal Palace,29,10,7,12,8
+11,11,12,Leeds,28,11,3,14,4
+12,12,13,Wolves,29,9,8,12,5
+13,13,14,Southampton,29,9,6,14,3
+14,14,15,Burnley,29,8,9,12,6
+15,15,16,Brighton,28,6,11,11,4
+16,16,17,Newcastle,28,7,7,14,3
+17,17,18,Fulham,29,5,11,13,7
+18,18,19,West Brom,29,3,9,17,5
+19,19,20,Sheffield United,29,4,2,23,3

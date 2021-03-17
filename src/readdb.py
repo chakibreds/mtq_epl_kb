@@ -102,8 +102,9 @@ def managers_to_managers(datafram,teams):
                 manager["manager"],
                 next(t for t in teams if manager["team"] == t.get_label())
             ))
-        except ValueError:
+        except StopIteration:
             print("Erreur à la ligne",index)
+            print(manager["team"], [t for t in teams if manager["team"] == t.get_label()])
             continue
     return managers
 

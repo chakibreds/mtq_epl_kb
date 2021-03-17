@@ -2,7 +2,7 @@ import abox
 import sparql
 
 # raisonneur
-import sys,os
+import os
 os.system("java -cp  reasoner/lib/*: reasoner/JenaApi ../ontologies/Bet.owl ../ontologies/data.owl > ../ontologies/infered.owl")
 
 bet = abox.load_graph("../ontologies/infered.owl")
