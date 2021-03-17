@@ -15,15 +15,22 @@ queries = [
     'playGameHome.sql',
     'bestRankThan.sql',
     'best10RankThan.sql',
-    'betterFormThan.sql',
+    'betterFormThan.sql'
+]
+
+for query in queries:
+    file_name = dir+query
+    sparql.sparql_construct(bet,file_name,verbose=True)
+
+dir = '../ontologies/sparql-generalization/'
+generalization = [
     'c1.sql',
     'c2.sql',
     'c3.sql',
     'c4.sql'
-    
 ]
 
-for query in queries:
+for query in generalization:
     file_name = dir+query
     sparql.sparql_construct(bet,file_name,verbose=True)
 

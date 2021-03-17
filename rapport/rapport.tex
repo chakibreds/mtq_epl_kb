@@ -153,7 +153,6 @@ Cette relation représentera donc, d'une façon, la probabilité que cette équi
   \item Cette équipe joue à domicile;
   \item Elle a une meilleur forme que son adversaire;
   \item Elle a un meilleur classement que son adversaire dans la ligue;
-  \item Aucune (ou peu) de défaite avec l'arbitre du match;
   \item Et bien d'autres ...
 \end{itemize}
 
@@ -176,14 +175,13 @@ On a commencé par la plus évidente, une équipe de football.
   \multicolumn{5}{|c|}{Propriètes de la classe \textbf{Team}} \\ \hline
   Détail & Nom de la propriétés & Domaine & Co-domaine & Notes \\ \hline
   le nom d'une équipe & rdfs:label  & X & X &  \\ \hline
-  Date de création & creationDate & Team & String &  \\ \hline
   Joue un match & PlayedAGame & Team & Game &  \\ \hline
   A un entraîneur & ManagedBy & Team  & Manager &  \\ \hline
   Classement Actuel & rank  & Team & Manager &  \\ \hline
   Nombre de victoire & nWin & Team & int &  \\ \hline
   Nombre de match Nul & nDraw & Team & int &  \\ \hline
   Nombre de défaite & nLose & Team & int &  \\ \hline
-  La forme Actuel & currentFrom & Team & String & eg. "WWWDL" \\ \hline
+  La forme Actuel & currentFrom & Team & int & La forme est représentée par la somme des point acquis lors des 5 derniers matchs. \\ \hline
   Joue ce match à domicile & playGameHome & Team & Game & \\ \hline
   Joue ce match à l'extérieur & playGameAway & Team & Game & \\ \hline
   A gagner ce match & winner & Team & GamePlayed & \\ \hline
@@ -299,42 +297,55 @@ Elles prendront la forme d’une propriété dont le domaine est \textit{Team}.
   Détail & Nom de la propriétés & Domaine & Co-domaine\\ \hline
   L'équipe joue à domicile & playGameHome & Team & Game  \\ \hline
   L'équipe a un meilleur classement que son adversaire & bestRankThan & Team & Team  \\ \hline
-  l'équipe a une meilleur forme que son adversaire & bestFormThan & Team & Team  \\ \hline
-  aucune défaite avec cet arbitre & neverLooseWith & Team & Referee \\ \hline
-  ... & ... & ... & ...\\
+  Le classement de l'équipe est largement mieux que son adversaire & best10RankThan & Team & Team \\ \hline
+  l'équipe a une meilleur forme que son adversaire & bestFormThan & Team & Team  \\
   \hline
 \end{tabular}
 
-\paragraph{Généralisation des contraintes} Une fois les contraintes de base définit et afin de simplifier la définition des relations finales, nous passons par cette étape de généralisation des contraintes de base. Cela consiste en la transformation des propriétés précédemment défini en propriétés qui ont toutes comme domaine \textit{Team} et comme co-domaine \textit{GameUpComing}.
+\paragraph{Généralisation des contraintes} Une fois les contraintes de base définit et afin de simplifier la définition des relations finales, nous passons par cette étape de généralisation des contraintes de base. Cela consiste en la transformation des propriétés précédemment définies en propriétés qui ont toutes comme domaine \textit{Team} et comme co-domaine \textit{GameUpComing}.
 
 Par exemple, la propriété \textit{Team} \textit{bestRankThan} \textit{Team} va devenir \textit{Team} \textit{c2} \textit{GameUpComing}. La sémantique associée à \textit{c2} sera : \guillemotleft une équipe a un meilleur classement que l'équipe contre laquelle elle va jouer à ce match.\guillemotright
 
-\lstinputlisting[firstline=7,lastline=20,caption=Requête qui transforme \textit{bestRankThan} en \textit{c2}]{../ontologies/sparql-construct/generalizaion.sql}
+\lstinputlisting[firstline=7,lastline=20,caption=Requête qui transforme \textit{bestRankThan} en \textit{c2}]{../ontologies/sparql-generalization/c2.sql}
 
 On aura donc ce qui suit :
 \begin{description}
   \item[c1] associée a \textit{playGameHome}
   \item[c2] associée a \textit{bestRankThan}
-  \item[c3] associée a \textit{bestFormThan}
-  \item[c4] associée a \textit{neverLooseWith}
-  \item[c5] associée a \dots
+  \item[c3] associée a \textit{best10RankThan}
+  \item[c4] associée a \textit{bestFormThan}
 \end{description}
 
 \paragraph{Conjonctions des contraintes}
 
 Enfin, les propriétés finales ne seront que des conjonctions des contraintes généralisées.
 
-\[
-  highProb(t,g) \equiv c_1(t,g) \wedge \dots \wedge c_n(t,g)
-\]
-
-\nb En les définissant ainsi, alors implicitement \textit{highProb} devient une super-propriété de toutes les autres et \textit{medProb} est la super-propriété de \textit{lowProb}.
+\begin{description}
+  \item[highProb] est définie comme étant la conjonction de toutes les contraintes. 
+  \[highProb(t,g) \equiv c_1(t,g) \wedge c_2(t,g) \wedge c_3(t,g) \wedge c_4(t,g)\]
+  \item[medProb] est définie comme étant la conjonction de 2 ou 3 contraintes.
+  \item[lowProb] est définie comme étant le conjonction d'une seule contrainte.
+\end{description}
 
 \subsection{Constitution de la ABOX}
+
+Une fois la \textbf{TBOX} définie et construite, nous devons récupérer les assertions qui constitueront les faits de notre \textbf{ABOX}. Pour cela, nous avons extrait, via un script python\footnote{Vous trouverez le script ici : \href{../db/update.py}{update.py}}, les matches qui se sont déroulés à ce jour\footnote{\url{https://www.football-data.co.uk/mmz4281/2021/E0.csv}} ainsi que le classement actuel\footnote{\url{https://www.msn.com/en-au/sport/football/epl/ladder}} de la \textit{Premier league}.
+
+À ce stade, nous avons donc toutes les informations dont on a besoin sous un format CSV. On a ensuite définis des scripts python, à l'aide de la librairie \href{https://github.com/RDFLib/rdflib}{RDFLib}, afin de générer les faits constituant la \textbf{ABOX}.
+
+Il faut noter que, à ce stade, les faits ne contiennent que certaines propriétés de base. Le reste sera inférées par un raisonneur et des requêtes SPARQL.
 
 \subsection{Autres composants}
 
 (enrichissement de la base, raisonneur, Triple store, API de programmation)
+
+Afin de générer toutes les propriété dont on a besoin, nous fesont appele à plusieurs programmes.
+
+\subsubsection{Raisonneur}
+
+
+
+\subsubsection{Requêtes SPARQL}
 
 
 \section{Illustration d'utilisation}
