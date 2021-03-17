@@ -19,7 +19,7 @@ class Team:
         self.nWin = int(nWin)
         self.nLoose = int(nLoose)
         self.nDraw = int(nDraw)
-        self.currentForm = currentForm
+        self.currentForm = int(currentForm)
         pass
 
     def get_label(self):
@@ -40,7 +40,7 @@ class Team:
         ontologie.add((team, namespace.nDraw, Literal(self.nDraw,datatype=XSD.int)))
 
         if self.currentForm is not None:
-            ontologie.add((team, namespace.currentForm, Literal(self.currentForm,datatype=XSD.string)))
+            ontologie.add((team, namespace.currentForm, Literal(self.currentForm,datatype=XSD.int)))
 
 
 

@@ -87,7 +87,7 @@ def rank_to_teams(datafram):
                 team["win"],
                 team["loose"],
                 team["draw"],
-                None
+                team["currentForm"]
             ))
         except ValueError:
             print("Erreur à la ligne",index)
