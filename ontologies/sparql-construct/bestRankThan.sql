@@ -11,12 +11,7 @@ WHERE{
     ?t1 rdf:type bet:Team.
     ?t2 rdf:type bet:Team.
     ?game rdf:type bet:GameUpComing.
-    ?game bet:teams ?t1.
-    ?game bet:teams ?t2.
-    FILTER(?t1 != ?t2).
-    {
-        ?t1 bet:rank ?r1.
-	    ?t2 bet:rank ?r2.
-        FILTER(?r1 > ?r2)
-    }
+    ?t1 bet:rank ?r1.
+	?t2 bet:rank ?r2.
+    FILTER(?r1< ?r2)
 }

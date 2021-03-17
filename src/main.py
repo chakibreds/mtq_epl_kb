@@ -13,7 +13,8 @@ queries = [
     'winAgainst.sql',
     'drawAgainst.sql',
     'playGameHome.sql',
-    'bestRankThan.sql'
+    'bestRankThan.sql',
+    'generalizaion.sql'
 ]
 
 for query in queries:
