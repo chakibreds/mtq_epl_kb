@@ -6,14 +6,13 @@ PREFIX bet: <http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontolog
  
 
 CONSTRUCT{
-?t1 bet:bestRankThan ?t2.
+?t1 bet:betterFormThan ?t2.
 }
 WHERE{
     ?t1 rdf:type bet:Team.
     ?t2 rdf:type bet:Team.
     ?game rdf:type bet:GameUpComing.
-    ?t1 bet:rank ?r1.
-	?t2 bet:rank ?r2.
-    FILTER(?r1< ?r2)
+    ?t1 bet:currentForm ?f1.
+	?t2 bet:currentForm ?f2.
+    FILTER(?f1 > ?f2)
 }
-

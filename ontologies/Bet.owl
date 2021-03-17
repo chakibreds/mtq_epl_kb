@@ -53,9 +53,27 @@
     
 
 
+    <!-- http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#best10RankThan -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#best10RankThan">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Team"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Team"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#bestRankThan -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#bestRankThan">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Team"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Team"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#betterFormThan -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#betterFormThan">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Team"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Team"/>
     </owl:ObjectProperty>
@@ -287,7 +305,7 @@
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#currentForm">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Team"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
     </owl:DatatypeProperty>
     
 
