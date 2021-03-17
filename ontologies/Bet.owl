@@ -62,10 +62,41 @@
     
 
 
+    <!-- http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#c1 -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#c1">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#constraint"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#c2 -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#c2">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#bestRankThan"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#constraint"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#c3 -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#c3">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#constraint"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#c4 -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#c4">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#constraint"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#constraint -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#constraint">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#Team"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/massy/ontologies/2021/2/untitled-ontology-5#GameUpComing"/>
     </owl:ObjectProperty>
