@@ -8,3 +8,6 @@ rapport.synctex.gz
 
 # python
 __pycache__
+
+#
+src/reasoner/JenaApi.class
