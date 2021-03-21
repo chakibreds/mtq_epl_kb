@@ -1,0 +1,29 @@
+Executing: ../ontologies/sparql-final/highProb.sql
+2 element found
+Executing: ../ontologies/sparql-final/medProb.sql
+8 element found
+Executing: ../ontologies/sparql-final/lowProb.sql
+10 element found
+Result for High probabilities :
+	 Man United -> ManUnitedVSBrighton04042021
+	 Chelsea -> ChelseaVSWestBrom03042021
+Result for Medium probabilities :
+	 Leeds -> LeedsVSSheffieldUnited03042021
+	 Southampton -> SouthamptonVSBurnley04042021
+	 Arsenal -> ArsenalVSLiverpool04042021
+	 Aston Villa -> AstonVillaVSFulham03042021
+	 Man City -> LeicesterVSManCity03042021
+	 Everton -> EvertonVSCrystalPalace05042021
+	 Tottenham -> NewcastleVSTottenham04042021
+	 West Ham -> WolvesVSWestHam05042021
+Result for Low probabilities :
+	 Sheffield United -> LeedsVSSheffieldUnited03042021
+	 Burnley -> SouthamptonVSBurnley04042021
+	 Brighton -> ManUnitedVSBrighton04042021
+	 West Brom -> ChelseaVSWestBrom03042021
+	 Liverpool -> ArsenalVSLiverpool04042021
+	 Fulham -> AstonVillaVSFulham03042021
+	 Leicester -> LeicesterVSManCity03042021
+	 Crystal Palace -> EvertonVSCrystalPalace05042021
+	 Newcastle -> NewcastleVSTottenham04042021
+	 Wolves -> WolvesVSWestHam05042021

@@ -1,10 +1,15 @@
 import abox
 import sparql
 
+verbose = True
 # raisonneur
 import os
+if verbose:
+    print("Executing reasoner")
 os.system("java -cp  reasoner/lib/*: reasoner/JenaApi ../ontologies/Bet.owl ../ontologies/data.owl > ../ontologies/infered.owl")
 
+if verbose:
+    print("Loading ontologie")
 bet = abox.load_graph("../ontologies/infered.owl")
 
 dir = '../ontologies/sparql-construct/'

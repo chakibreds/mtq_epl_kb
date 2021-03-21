@@ -4,6 +4,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[french]{babel}
 \usepackage{graphicx}
+\usepackage{subcaption}
 \usepackage[top=3cm, bottom=3cm, left=3cm, right=3cm]{geometry}
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -41,7 +42,7 @@
   keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
   keywordstyle=\color{magenta},       % keyword style
   %language=C++,                    % the language of the code
-  morekeywords={PREFIX,FILTER,UNION,WHERE,CONSTRUCT},            % if you want to add more keywords to the set
+  morekeywords={SELECT,PREFIX,FILTER,UNION,WHERE,CONSTRUCT},            % if you want to add more keywords to the set
   numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
   numbersep=5pt,                   % how far the line-numbers are from the code
   numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
@@ -261,6 +262,7 @@ Certaines des ces propriétés ne sont pas à définir explicitement dans la \te
 \textit{manager} et \textit{managedBy} sont un exemple des propriétés inférées par le raisonneur. En effet, il suffit d'ajouter à la \textbf{ABOX} que M \textit{manage} T alors il déduira automatiquement que T \textit{managedBy} M.
 
 \paragraph{winner et looser}
+\label{winner}
 
 Le cas de \textit{winner} et \textit{looser} est plus particulier. Pour qu’une équipe soit la vainqueur d’un match alors elle doit participer à ce match et marquer plus de buts que son adversaire. Donc on peut l’écrire de cette façon :
 
@@ -331,37 +333,80 @@ Enfin, les propriétés finales ne seront que des conjonctions des contraintes g
 
 Une fois la \textbf{TBOX} définie et construite, nous devons récupérer les assertions qui constitueront les faits de notre \textbf{ABOX}. Pour cela, nous avons extrait, via un script python\footnote{Vous trouverez le script ici : \href{../db/update.py}{update.py}}, les matches qui se sont déroulés à ce jour\footnote{\url{https://www.football-data.co.uk/mmz4281/2021/E0.csv}} ainsi que le classement actuel\footnote{\url{https://www.msn.com/en-au/sport/football/epl/ladder}} de la \textit{Premier league}.
 
+\begin{figure}[!h]
+	\centering
+    \lstinputlisting{../db/actual-ranking.csv}
+    \caption{Classement actuel des équipes}    
+\end{figure}
+       
+\begin{figure}[!h]
+	\centering
+    \lstinputlisting[firstline=0,lastline=10]{../db/2020-21.csv}
+    \caption{Quelques matches joués}
+\end{figure}
+  
 À ce stade, nous avons donc toutes les informations dont on a besoin sous un format CSV. On a ensuite définis des scripts python, à l'aide de la librairie \href{https://github.com/RDFLib/rdflib}{RDFLib}, afin de générer les faits constituant la \textbf{ABOX}.
 
 Il faut noter que, à ce stade, les faits ne contiennent que certaines propriétés de base. Le reste sera inférées par un raisonneur et des requêtes SPARQL.
 
 \subsection{Autres composants}
 
-(enrichissement de la base, raisonneur, Triple store, API de programmation)
-
-Afin de générer toutes les propriété dont on a besoin, nous fesont appele à plusieurs programmes.
-
+Avant de pouvoir générer les propriétés finales (ex: \textit{highProb}), nous devons d’abord construire quelques propriétés intermédiaires. Pour cela, nous faisons appel à plusieurs programmes.
 \subsubsection{Raisonneur}
 
+Le premier est un raisonneur qui permet de déduire les propriétés à partir de celles disponible dans la ABOX. Nous avons utilisé le raisonneur fourni avec l'API Java de \href{https://jena.apache.org/}{JENA}\footnote{Le code est disponble ici : \href{../src/reasoner/JenaApi.java}{JenaApi.java}}.
 
+Le programme prend en paramètre deux fichiers OWL, le schéma qui correspond à la \textbf{TBOX} ainsi que les données qui forme la \textbf{ABOX}, et retourne un fichier OWL qui contient le tout avec les propriétés déduites.
 
 \subsubsection{Requêtes SPARQL}
 
+Comme il est mentionné plus tôt, certaines propriétés ne peuvent être déduites par un raisonneur (Voir \nameref{winner}). Il est donc indispensable de les générer d'une autre manière. Pour cela, nous avons écrit des requêtes \textbf{SPARQL}\footnote{Disponible ici \href{../ontologies/sparql-construct/.}{sparql-construct/} et là \href{../ontologies/sparql-generalization/.}{sparql-generalization/}} qui permet à partir des propriétés de base de générer toutes les autres (y compris les requêtes représentant les contraintes).
+
+
+Ensuite, un script Python englobe le tout. Il exécute le raisonneur, charge le résultat et exécute dessus les requêtes \textbf{SPARQL}.
+
+Enfin, nous avons défini les propriétés finales en \textbf{SPARQL}. Il suffit donc d’exécuter ces requêtes pour avoir le résultat.
+
+\lstinputlisting[caption=Requête qui retourne les équipes qui ont une forte chance de gagner un match]{../ontologies/sparql-final/highProb.sql}
 
 \section{Illustration d'utilisation}
 
-en réponse aux objectifs fixés (e.g. requête SPARQL
-et/ou DL, exemples de classification automatique).
+\paragraph{Charger les données} 
+
+On commence par charger les données en CSV et les transformer en RDF. Cela est fait en exécutant le script \href{../src/abox.py}{abox.py}. Le résultat est le fichier OWL \href{../ontologies/data.owl}{data.owl}.
+
+\paragraph{Inférer les propriétés} 
+
+Ensuite, on exécute le raisonneur et les requêtes \textbf{SPARQL}. Cela est fait en exécutant le script \href{../src/main.py}{main.py}. Le résultat est le fichier OWL \href{../ontologies/final.owl}{final.owl}.
+
+\begin{figure}
+  \lstinputlisting[lastline=16]{img/main.txt}
+  \caption{Affichage du script \textit{main.py}}
+\end{figure}
+
+\paragraph{Exécuer les requêtes finales}
+
+Enfin, on exécute le dernier script (\href{../src/query.py}{query.py}) pour exécuter les requêtes finales. Ce qui nous donne ce qui suit:
+
+\begin{figure}[!h]
+  \lstinputlisting{img/query.txt}
+  \caption{Affichage du script \textit{query.py}}
+\end{figure}
+
+On voit ici que \textit{Chelsea} a de très forte chance de gagner son match contre \textit{West Brom}.
+Ce qui s'explique par le fait que \textit{Chelsea} satisfait toutes les contraintes défini plus haut.
 
 \section{Résultat et perspectives}
 
 \subsection{Résultat}
 
-Une discussion sur le résultat obtenu en présentant les perspectives envisageables
+On estime que pour une première version avec assez peu de données, on a réussi à construire un système à base de connaissances qui prédit \textbf{relativement}\footnote{Prédictions plutôt naïve pour l'instant} bien le gagnant d'un match.
 
 \subsection{Perspectives}
 
-(e.g. couplage avec des vocabulaires externes)
+On pourra réaliser plusieurs améliorations sur ce projet. On peut notamment coupler notre vocabulaire avec un vocabulaire externe (tel que \url{http://fr.dbpedia.org/page/Football}) pour pouvoir récupérer plus d’informations sur les équipes et les matches. Ce qui nous permettra de définir des contraintes plus complexe, plus ou moins forte, ce qui implique d’ajouter une sorte de coefficient pour chaque contrainte.
+
+Enfin, nous pourrons ajouter plusieurs classes de probabilité afin d'affiner le résultat final.
 
 \subsection{Avantages et limites de l’Ingénierie des Connaissances}
 

@@ -1,0 +1,22 @@
+executing ../ontologies/sparql-construct/winner-looser.sql
+438  element added to the ontologie.
+executing ../ontologies/sparql-construct/winAgainst.sql
+374  element added to the ontologie.
+executing ../ontologies/sparql-construct/drawAgainst.sql
+122  element added to the ontologie.
+executing ../ontologies/sparql-construct/playGameHome.sql
+10  element added to the ontologie.
+executing ../ontologies/sparql-construct/bestRankThan.sql
+190  element added to the ontologie.
+executing ../ontologies/sparql-construct/best10RankThan.sql
+45  element added to the ontologie.
+executing ../ontologies/sparql-construct/betterFormThan.sql
+175  element added to the ontologie.
+executing ../ontologies/sparql-generalization/c1.sql
+10  element added to the ontologie.
+executing ../ontologies/sparql-generalization/c2.sql
+10  element added to the ontologie.
+executing ../ontologies/sparql-generalization/c3.sql
+2  element added to the ontologie.
+executing ../ontologies/sparql-generalization/c4.sql
+10  element added to the ontologie.
