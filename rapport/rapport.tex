@@ -275,7 +275,7 @@ Mais ce genre d'équivalence ne peut être déduite par le raisonneur de Protég
 
 \lstinputlisting[caption=Requête qui déduit les propriétés \textit{winner} et \textit{looser}]{../ontologies/sparql-construct/winner-looser.sql}
 
-\subsubsection{Les contraintes favorisent la victoire}
+\subsubsection{Les contraintes favorisant la victoire}
 
 L'idée générale est de déduire des relations, entre une équipe et un match à venir, qui indiques que cette équipe a des chances de gagner ce match. Pour cela, on définit les propriétés suivantes : 
 
@@ -410,11 +410,51 @@ Enfin, nous pourrons ajouter plusieurs classes de probabilité afin d'affiner le
 
 \subsection{Avantages et limites de l’Ingénierie des Connaissances}
 
-rencontrés lors de la réalisation de votre projet.
+Durant la réalisation du projet, nous nous sommes rendu compte que la partie modélisation du problème est assez intuitive. En effet, il suffit de bien connaitre le domaine considérer et de traduire les connaissances en tuples RDF. Ce qui a été très facile. Par ailleur, peu de données suffisent à avoir un système qui peut déduire quelques connaissances utiles.
+
+Par contre, nous avons rencontrés quelques problèmes. Notamment, lors de la phase de le constitution de la \textbf{ABOX}. En effet, le processus de récupération des données n'a pas été aussi facile qu'on le penser. Malgré un domaine qui est assez grand public, les données n'ont pas été facile à retrouver dans un format CSV ou équivalent. On a dû écrire quelques scripts pour récupérer les données qui manquent.
 
 \section{Intérêt des ontologies par rapport aux bases de données relationnelles}
 
-Important : une discussion sur l’intérêt des ontologies par rapport aux bases de données de
-type SGBDR/BD No SQL (2 à 3 pages).
+À la fin du projet, on s’est rendu compte de quelques différences notables des systèmes à base de connaissances par rapport aux classiques bases de données relationnelles. On va mettre en avant dans ce qui suit les limites des BDR et les réponses apportés par les ontologies.
+
+\paragraph{Séparation entre la structure et les données}
+
+Dans une base de données relationnelles, la structure des données est séparée des données elle-même. Si on extrait les données de la base, il faut donc aussi en extraire la structure pour comprendre à quoi correspond chaque donnée. Dans les ontologies, les données sont décrites sous la forme de graphe. La structure fait donc partie de la donnée.
+
+\paragraph{Indépendances des données} 
+
+Dans une base de données relationnelles, les données ne sont pas indépendantes les unes des autres. Elles se conçoivent dans le contexte de la base, d'un champ et d'un enregistrement. Par contre, dans une ontologie, les données sont décrite selon la logique des prédicat du premier ordre, sous la forme de triplets (\textit{subject - propreties - object}). Chaque triplet représente une donnée et est indépendant du contexte. De plus une propriété peut-être répétable pour une même ressource. Ce qui nécessite un nouveau champ ou une nouvelle table dans une base de données relationnelles.
+
+\paragraph{Multilinguisme}
+
+Si on veut exprimer, dans un schéma relationnel, une données dans plusieurs langues, alors on doit définir un champ pour chaque langue. Ce qui donne plusieurs champs qui représentent la même donnée alors que la signification de celui-ci reste exactement la même. Par contre, dans les ontologies, il est possible d'attribuer un tag pour la donnée qui définit la langue dans laquelle elle est décrite.
+
+Exemple:
+\begin{lstlisting}
+dbp:Football rdfs:label "Football"@fr
+dbp:Football rdfs:label "Soccer"@en
+\end{lstlisting}
+
+Une seule propriété définit le nom de la ressource (ici \textit{rdfs:label}), alors que dans un schéma relationnel, il aurait fallu définir deux champs (par exemple \textit{label-fr} et \textit{label-en}).
+
+\paragraph{Portabilité et normalisation des données} 
+
+L’une des limites principale des bases de données relationnelles est le manque de portabilité et de normalisation des données. C’est-à-dire, il n’est pas possible d’identifier nativement deux ressources équivalentes entre deux bases différentes. C’est une possibilité offerte par les ontologies au travers de \textbf{OWL}\footnote{Web Ontology Language est un langage de représentation des connaissances construit sur le modèle de données de RDF.} qui fournit les moyens pour définir des ontologies web structurées. Puisqu’une ressource est identifiée par un identificateur unique (URI\footnote{Uniform Resource Identifier}), il possible de dire qu’une certaine ressource, de part la propriété \textit{owl:sameAs}, est équivalente à une autre, et cela, même si les deux ressources ne sont pas dans la même base de connaissances. Ce qui donne aux ontologies une portabilité et une universalisation des ressources et données qu’elles expriment.
+De plus, avec cette possibilité de créer des relations sémantique entre les ressources, il est possible d’inférer sur les connaissances déjà établies pour pouvoir en déduire de nouvelles.
+
+Exemple: Étant donnée ces connaissances
+\begin{lstlisting}
+  bet:entraineur_X bet:manage bet:equipe_X
+  bet:manage owl:inverseOf bet:managedBy
+\end{lstlisting}
+
+Alors on peut déduire automatiquement cette connaissance
+
+\begin{lstlisting}  
+  bet:equipe_X bet:managedBy bet:entraineur_X
+\end{lstlisting}
+
+Pour finir, on voit bien que le modèle relationnel impose une structure \textbf{rigide, difficile à faire évoluer et indépendante} des données elles-mêmes alors que les ontologies offrent un modèle \textbf{souple, universel, et compatible} avec le fonctionnement du Web.
 
 \end{document}
