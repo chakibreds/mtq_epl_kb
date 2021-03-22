@@ -10,13 +10,41 @@ Pour des détails sur la partie modélisation du projet, veuillez voir le [rappo
 
 ## Implémentation
 
+### Dépendances
+
+#### Python
+
+Pour installer les dépendances associé au code python, exécuter cette commande 
+```
+pip3 install -r requirements.txt
+```
+
+#### Jena
+
+L'API Jena utilisée est directement incluse dans le projet sous `src/reasoner/lib/`
+
 ### Ontologies
 
 L'implémentation de le T-Box et la A-Box  est réalisée à partir de l’outil [Protégé](https://fr.wikipedia.org/wiki/Prot%C3%A9g%C3%A9_(logiciel)). Les ontologies sont dans le dossier [ontologies](./ontologies).
 
-### SPARQL query
+## Utilisation
+
+Dans le dossier `src/`:
+```
+cd src/
+```
+
+Exéuter les deux scripts python suivants:
+
+```
+# pour charger les données
+python3 main.py
+# Pour exécuter les requêtes finales
+python3 query.py
+```
 
 ## Auteurs
 
 - Elhouiti Chakib -> celhouiti@gmail.com
 - Kezzoul Massili -> massy.kezzoul@gmail.com
+- Bouzidi Belkassim -> bouzidi.belkassim@etu.umontpellier.fr
